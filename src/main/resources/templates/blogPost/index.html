@@ -23,14 +23,12 @@
                             <p th:text="${blog.blogEntry}" />
                         </div>
                         <div class="panel-footer">
-                             
-                            <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="post"
+
+                            <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="delete"
                                   class="form-horizontal">
                                 <div class="form-group">
                                     <input type="hidden" name="_method" value="delete"/>
                                     <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
-
-
                                 </div>
                             </form>
 
