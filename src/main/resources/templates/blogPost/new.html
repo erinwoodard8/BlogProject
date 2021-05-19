@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <meta charset="UTF-8">
+        <div th:replace="/fragments/styling :: head-style"></div>
         <title>Create a New Blog</title>
     </head>
     <body>
@@ -26,7 +25,6 @@
                 <button class="btn btn-primary">Submit Your Post</button>
             </form>
         </div>
-        <script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
+        <div th:replace="/fragments/styling :: body-links"></div>
     </body>
 </html>

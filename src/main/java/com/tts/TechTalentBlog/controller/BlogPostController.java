@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping(value = "/")
 public class BlogPostController {
@@ -53,6 +55,33 @@ public class BlogPostController {
     public String deletePostWithId(@PathVariable Long id, BlogPost blogPost) {
         blogPostRepository.deleteById(id);
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/blogpost/{id}", method = RequestMethod.GET)
+    public String editPostWithId(@PathVariable Long id, BlogPost blogPost, Model model) {
+        Optional<BlogPost> post = blogPostRepository.findById(id);
+        if(post.isPresent()) {
+            BlogPost realPost = post.get();
+            model.addAttribute("blogPost", realPost);
+        }
+        return "blogpost/edit";
+    }
+
+    @RequestMapping(value = "/blogposts/update/{id}", method = RequestMethod.POST)
+    public String updatePost(@PathVariable Long id, BlogPost blogPost, Model model) {
+        Optional<BlogPost> originalPost = blogPostRepository.findById(id);
+        if(originalPost.isPresent()) {
+            BlogPost newPost = originalPost.get();
+            newPost.setTitle(blogPost.getTitle());
+            newPost.setAuthor(blogPost.getAuthor());
+            newPost.setBlogEntry(blogPost.getBlogEntry());
+            blogPostRepository.save(newPost);
+            model.addAttribute("title", newPost.getTitle());
+            model.addAttribute("author", newPost.getAuthor());
+            model.addAttribute("blogEntry", newPost.getBlogEntry());
+        }
+
+        return "blogpost/result";
     }
 
 
