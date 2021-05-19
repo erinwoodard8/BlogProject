@@ -6,29 +6,27 @@
         <title>Create a New Blog</title>
     </head>
     <body>
-    <div class="container">
-        <h1>Create a New Blog Post</h1>
-        <form action="#" th:action="@{/blogposts}" th:object="${blogPost}" method="post">
+        <div th:replace="fragments/navbar :: navbar" ></div>
+        <div class="container">
+            <h1>Create a New Blog Post</h1>
+            <form action="#" th:action="@{/blogposts}" th:object="${blogPost}" method="post">
 
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Blog Title..." th:field="*{title}" />
-            </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Blog Title..." th:field="*{title}" />
+                </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name Here..." th:field="*{author}" />
-            </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Name Here..." th:field="*{author}" />
+                </div>
 
-<!--            <div class="form-group">-->
-<!--                <input type="text" class ="form-control" placeholder="Blog Entry" th:field="*{blogEntry}" />-->
-<!--            </div>-->
-            <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Blog Entry" th:field="*{blogEntry}"></textarea>
-            </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Blog Entry" th:field="*{blogEntry}"></textarea>
+                </div>
 
-            <button class="btn btn-primary">Submit Your Post</button>
-        </form>
-    </div>
-    <script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
+                <button class="btn btn-primary">Submit Your Post</button>
+            </form>
+        </div>
+        <script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
     </body>
 </html>
