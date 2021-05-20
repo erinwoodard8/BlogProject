@@ -46,18 +46,11 @@ public class BlogPost {
         return createdDate;
     }
 
-//    @PreUpdate
-//    public void onUpdate() {
-//        updated = new Date();
-//    }
-//
+
     public Timestamp getUpdated() {
         return updated;
     }
 
-    public void setUpdated(Timestamp updated) {
-        this.updated = updated;
-    }
 
     public String getTitle() {
         return title;

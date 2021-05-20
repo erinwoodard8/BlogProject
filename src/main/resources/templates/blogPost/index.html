@@ -21,9 +21,10 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <span th:text="${blog.createdDate}"/>
-                                        <span th:if="${blog.updated == null}"/>
+                                        <span th:if="${blog.updated == blog.createdDate}"/>
+
                                         <br>
-                                        <span th:unless="${blog.updated == null}">Updated:<span th:text="${blog.updated}"/></span>
+                                        <span th:unless="${blog.updated == blog.createdDate}">Updated:<span th:text="${blog.updated}"/></span>
                                     </div>
                                 </div>
                                 <div class="row">
