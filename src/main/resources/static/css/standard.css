@@ -11,3 +11,15 @@ body{
 	padding-bottom: 10px;
 	border-radius: 5px;
 }
+
+.navbar {
+    display: flex;
+    font-size: 36px;
+    justify-content: center;
+}
+
+.header {
+    font-size: 56px;
+    text-align: center;
+}
+

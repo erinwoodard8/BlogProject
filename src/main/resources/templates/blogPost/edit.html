@@ -7,7 +7,9 @@
 <body>
     <div th:replace="/fragments/navbar :: navbar"></div>
     <div class="container">
-        <h1>Edit Blog Post</h1>
+        <div class="header">
+            Edit Blog Post
+        </div>
         <form action="#" th:action="@{~/blogposts/update/{id}(id=${blogPost.getId()})}" th:object="${blogPost}" method="post">
 
             <div class="form-group">

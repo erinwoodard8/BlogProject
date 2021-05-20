@@ -8,7 +8,9 @@
     <body>
         <div th:replace="fragments/navbar :: navbar"></div>
         <div class="container">
-            <h1>Welcome to Our Blog Post Site!</h1>
+            <div class="header">
+                Welcome to Our Blog Site!
+            </div>
 
             <div class="row">
                 <div th:each="blog:${posts}">
@@ -17,8 +19,9 @@
                             <div class="panel-heading">
                                 <h2 th:text="${blog.title}"></h2>
                             </div>
+
                             <div class="panel-body">
-                                <strong><p th:text="${blog.author}"/></strong>
+                                <strong>Posted By:<p th:text="${blog.author}"/></strong>
                                 <p th:text="${blog.blogEntry}" />
                             </div>
                             <div class="panel-footer">
@@ -31,15 +34,20 @@
                                     </div>
                                 </form>
                                 <!--Edit Blogs-->
-                                <a th:href="@{blogpost/{id}(id=${blog.id})}">
-                                    <button class="btn btn-info">Edit</button>
-                                </a>
+
+                                <form action="#" th:action="@{blogpost/{id}(id=${blog.id})}" th:method="get"
+                                      class="form-horizontal">
+                                    <div class="form-group">
+                                        <input type="hidden" name="_method" value="edit"/>
+                                        <button type="submit" class="btn btn-info btn-block" th:text="Edit">Edit</button>
+                                    </div>
+                                </form>
+
 
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <div th:replace="/fragments/styling :: body-links"></div>
