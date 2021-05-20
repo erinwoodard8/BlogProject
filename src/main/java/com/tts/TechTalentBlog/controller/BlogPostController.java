@@ -36,6 +36,8 @@ public class BlogPostController {
         model.addAttribute("title", blogPost.getTitle());
         model.addAttribute("author", blogPost.getAuthor());
         model.addAttribute("blogEntry", blogPost.getBlogEntry());
+        model.addAttribute("createdDate", blogPost.getCreatedDate());
+        model.addAttribute("updated", blogPost.getUpdated());
 
         return "blogpost/result";
     }
@@ -75,11 +77,16 @@ public class BlogPostController {
             newPost.setTitle(blogPost.getTitle());
             newPost.setAuthor(blogPost.getAuthor());
             newPost.setBlogEntry(blogPost.getBlogEntry());
+
+
             blogPostRepository.save(newPost);
             model.addAttribute("title", newPost.getTitle());
             model.addAttribute("author", newPost.getAuthor());
             model.addAttribute("blogEntry", newPost.getBlogEntry());
+            model.addAttribute("updated", newPost.getUpdated());
+
         }
+
 
         return "blogpost/result";
     }

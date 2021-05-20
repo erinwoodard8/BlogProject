@@ -1,9 +1,10 @@
 package com.tts.TechTalentBlog.model;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
 
 @Entity
 public class BlogPost {
@@ -14,7 +15,11 @@ public class BlogPost {
 
     @Column
     @CreationTimestamp
-    private Date createdDate;
+    private java.sql.Timestamp createdDate;
+
+    @Column
+    @UpdateTimestamp
+    private java.sql.Timestamp updated;
 
     private String title;
     private String author;
@@ -37,8 +42,21 @@ public class BlogPost {
         return id;
     }
 
-    public Date getCreatedDate() {
+    public Timestamp getCreatedDate() {
         return createdDate;
+    }
+
+//    @PreUpdate
+//    public void onUpdate() {
+//        updated = new Date();
+//    }
+//
+    public Timestamp getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Timestamp updated) {
+        this.updated = updated;
     }
 
     public String getTitle() {

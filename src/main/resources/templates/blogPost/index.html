@@ -20,7 +20,10 @@
                                 <h2 th:text="${blog.title}"></h2>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p th:text="${blog.createdDate}"/>
+                                        <span th:text="${blog.createdDate}"/>
+                                        <span th:if="${blog.updated == null}"/>
+                                        <br>
+                                        <span th:unless="${blog.updated == null}">Updated:<span th:text="${blog.updated}"/></span>
                                     </div>
                                 </div>
                                 <div class="row">
