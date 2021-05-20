@@ -1,6 +1,9 @@
 package com.tts.TechTalentBlog.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class BlogPost {
@@ -9,8 +12,13 @@ public class BlogPost {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column
+    @CreationTimestamp
+    private Date createdDate;
+
     private String title;
     private String author;
+
 
     @Lob
     private String blogEntry;
@@ -28,6 +36,11 @@ public class BlogPost {
     public Long getId() {
         return id;
     }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
     public String getTitle() {
         return title;
     }
