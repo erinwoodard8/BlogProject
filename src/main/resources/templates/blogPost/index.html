@@ -36,8 +36,9 @@
                             </div>
                             <div class="panel-footer">
                                 <!--Delete blogs-->
+                                <div class="buttonContainer">
                                 <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="delete"
-                                      class="form-horizontal">
+                                      class="form-inline">
                                     <div class="form-group">
                                         <input type="hidden" name="_method" value="delete"/>
                                         <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
@@ -46,14 +47,13 @@
                                 <!--Edit Blogs-->
 
                                 <form action="#" th:action="@{blogpost/{id}(id=${blog.id})}" th:method="get"
-                                      class="form-horizontal">
+                                      class="form-inline">
                                     <div class="form-group">
                                         <input type="hidden" name="_method" value="edit"/>
                                         <button type="submit" class="btn btn-info btn-block" th:text="Edit">Edit</button>
                                     </div>
                                 </form>
-
-
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -23,3 +23,10 @@ body{
     text-align: center;
 }
 
+.buttonContainer form {
+    display: inline-block;
+}
+
+.buttonContainer button {
+    display: inline-block;
+}
