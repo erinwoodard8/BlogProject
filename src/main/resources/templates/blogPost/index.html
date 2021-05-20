@@ -18,18 +18,10 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h2 th:text="${blog.title}"></h2>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <span th:text="${blog.createdDate}"/>
-                                        <span th:if="${blog.updated == blog.createdDate}"/>
 
-                                        <br>
-                                        <span th:unless="${blog.updated == blog.createdDate}">Updated:<span th:text="${blog.updated}"/></span>
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <strong><p th:text="${blog.author}"/></strong>
+                                        <span> Posted By: <strong><span th:text="${blog.author}"/></strong></span>
                                     </div>
                                 </div>
                             </div>
@@ -39,6 +31,14 @@
                                 <p th:text="${blog.blogEntry}" />
                             </div>
                             <div class="panel-footer">
+                                <div class="row timestamp">
+                                    <div class="col-md-12">
+                                        Created: <span th:text="${blog.createdDate}"/>
+                                        <br>
+                                        <span th:if="${blog.updated == blog.createdDate}"/>
+                                        <span th:unless="${blog.updated == blog.createdDate}">Updated: <span th:text="${blog.updated}"/></span>
+                                    </div>
+                                </div>
                                 <!--Delete blogs-->
                                 <div class="buttonContainer">
                                 <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="delete"
