@@ -27,8 +27,23 @@ body{
     background-color: #f55c47;
     border-color: #f55c47;
     width: 50%;
-
+    border-radius: 5px;
+    margin-top: 20px;
 }
+
+ .nav.navbar-nav.flex-fill li a {
+    color: #564a4a !important;
+}
+
+ .nav.navbar-nav.flex-fill li a:hover {
+    color: #292424 !important;
+}
+
+
+
+
+
+
 
 
 
