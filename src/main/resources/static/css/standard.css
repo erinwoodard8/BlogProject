@@ -24,7 +24,7 @@ body{
     display: flex;
     font-size: 36px;
     justify-content: center;
-    background-color: #f55c47;
+    background-color: rgba(245, 92, 71, .9);
     border-color: #f55c47;
     width: 50%;
     border-radius: 5px;
@@ -32,7 +32,7 @@ body{
 }
 
  .nav.navbar-nav.flex-fill li a {
-    color: #564a4a !important;
+    color: rgba(86, 74, 74,1)!important;
 }
 
  .nav.navbar-nav.flex-fill li a:hover {
@@ -57,7 +57,14 @@ body{
 .timestamp {
     float: right;
 }
-.panel-heading {
 
-    background-color: #f55c47 !important;
+
+.panel-heading {
+    background-color: rgba(245, 92, 71, .9) !important;
+    color: rgba(86, 74, 74,1);
+}
+
+.panel-footer {
+    background-color: rgba(245, 92, 71, .9) !important;
+    color: rgba(86, 74, 74,1);
 }

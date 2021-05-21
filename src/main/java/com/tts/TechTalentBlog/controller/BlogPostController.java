@@ -58,7 +58,7 @@ public class BlogPostController {
     @RequestMapping(value = "/blogposts/{id}", method = RequestMethod.DELETE)
     public String deletePostWithId(@PathVariable Long id, BlogPost blogPost) {
         blogPostRepository.deleteById(id);
-        return "redirect:/";
+        return "blogpost/delete";
     }
 
     @RequestMapping(value = "/blogpost/{id}", method = RequestMethod.GET)
