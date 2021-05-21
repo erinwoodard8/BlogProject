@@ -40,14 +40,6 @@ body{
 }
 
 
-
-
-
-
-
-
-
-
 .header {
     font-size: 56px;
     text-align: center;
@@ -64,4 +56,8 @@ body{
 
 .timestamp {
     float: right;
+}
+.panel-heading {
+
+    background-color: #f55c47 !important;
 }

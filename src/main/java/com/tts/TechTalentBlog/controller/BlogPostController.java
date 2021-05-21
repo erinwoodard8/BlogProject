@@ -37,7 +37,9 @@ public class BlogPostController {
         model.addAttribute("author", blogPost.getAuthor());
         model.addAttribute("blogEntry", blogPost.getBlogEntry());
         model.addAttribute("createdDate", blogPost.getCreatedDate());
-        model.addAttribute("updated", blogPost.getUpdated());
+        model.addAttribute("id", blogPost.getId());
+
+//        model.addAttribute("updated", blogPost.getUpdated());
 
         return "blogpost/result";
     }
