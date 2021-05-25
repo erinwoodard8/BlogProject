@@ -15,7 +15,7 @@ public class BlogPostController {
 
     @Autowired
     private BlogPostRepository blogPostRepository;
-//    private List<BlogPost> posts = new ArrayList<>();
+
 
     @GetMapping
     public String index(BlogPost blogPost, Model model) {
@@ -39,20 +39,10 @@ public class BlogPostController {
         model.addAttribute("createdDate", blogPost.getCreatedDate());
         model.addAttribute("id", blogPost.getId());
 
-//        model.addAttribute("updated", blogPost.getUpdated());
-
         return "blogpost/result";
     }
 
-//    @RequestMapping(value = "/blogpost/{id}", method = RequestMethod.DELETE)
-//    public String deletePostWithId(@PathVariable Long id, BlogPost blogPost, Model model) {
-//        //crud repository method
-//        blogPostRepository.deleteById(id);
-//        List<BlogPost> posts = blogPostRepository.findAll();
-//        model.addAttribute("posts",posts);
-//        return "blogpost/index";
-//    }
-//
+
 
 
     @RequestMapping(value = "/blogposts/{id}", method = RequestMethod.DELETE)
@@ -88,7 +78,6 @@ public class BlogPostController {
             model.addAttribute("updated", newPost.getUpdated());
 
         }
-
 
         return "blogpost/result";
     }

@@ -24,7 +24,7 @@ public class BlogPost {
     private String title;
     private String author;
 
-
+//annotation allows for more than 255 characters
     @Lob
     private String blogEntry;
 

@@ -7,6 +7,12 @@
 </head>
 <body>
 <div th:replace="fragments/navbar :: navbar"></div>
-Delete
+<div class="header">The post has been successfully deleted!</div>
+<div class="home-link">
+    <a class="home" th:href="@{/}">Go Back to Homepage</a>
+</div>
+
+
+<div th:replace="/fragments/styling :: body-links"></div>
 </body>
 </html>
