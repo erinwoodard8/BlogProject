@@ -6,19 +6,15 @@
         <title>Blog Site</title>
     </head>
     <body>
-<!--<div class="bg">-->
+
         <div th:replace="fragments/navbar :: navbar"></div>
-<!--        <div class="container">-->
+
             <div class="header">
                 Welcome to Our Blog Site
             </div>
 
-<!--        <div th:each="blog:${posts}">-->
+
             <div class="row card-container" th:each="blog:${posts}">
-
-
-<!--                <div th:each="blog:${posts}">-->
-<!--                    <div class="col-md-12 panel-container">-->
 
                     <div class="col-md-8" >
                         <div class="card">
