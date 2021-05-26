@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
     <head>
         <div th:replace="/fragments/styling :: head-style"></div>
         <title>Blog Website</title>
@@ -7,36 +7,28 @@
 
 
     <body>
+    <div class="bg">
         <div th:replace="fragments/navbar :: navbar" ></div>
-        <div class="container">
-            <div class="row header">
-                Your post was successful!
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h1 th:text="${title}"></h1>
-                            <span>Your Name: <strong><span th:text="${author}"/></strong></span>
-                        </div>
-                        <div class="panel-body">
+        <div class="header">Your Post Was Successful!</div>
+        <div class="row card-container">
+            <div class="col-md-8" >
+                <div class="card">
+                    <h5 class="card-header" th:text="${title}"></h5>
+                    <div class="card-body">
+                        <h5 class="card-title"> <span> Posted By: <span th:text="${author}"/></span></h5>
+                        <div class="card-text" th:text="${blogEntry}"></div>
 
-                            <p th:text="${blogEntry}" />
-                        </div>
-                        <div class="panel-footer">
-                            <!-- Link to Update -->
-                            <!-- Link to Show  -->
-                            <!--  Link to Destroy -->
-
-
-                            <a th:href="@{/blogpost/{id}?_method=edit(id=${id})}"><button class="btn btn-info">Edit Post</button></a>
-                            <a th:href="@{/}"><button class="btn btn-success">Back To Home Page</button></a>
-                            <a th:href="@{/blogposts/new}"><button class="btn btn-primary">Submit a New Blog Post</button></a>
+                        <div class="buttonContainer">
+                            <a th:href="@{/blogpost/{id}?_method=edit(id=${id})}"><button class="btn editButt">Edit Post</button></a>
+                            <a th:href="@{/blogposts/new}"><button class="btn submitNew">Submit a New Blog Post</button></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+    </div>
         <div th:replace="/fragments/styling :: body-links"></div>
     </body>
 </html>

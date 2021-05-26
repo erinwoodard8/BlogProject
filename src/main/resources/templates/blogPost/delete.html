@@ -6,13 +6,15 @@
     <title>Title</title>
 </head>
 <body>
-<div th:replace="fragments/navbar :: navbar"></div>
-<div class="header">The post has been successfully deleted!</div>
-<div class="home-link">
-    <a class="home" th:href="@{/}">Go Back to Homepage</a>
-</div>
+    <div class="bg">
+        <div th:replace="fragments/navbar :: navbar"></div>
+        <div class="header">The post has been successfully deleted!</div>
 
+        <div class="home-link">
+            <a class="home" th:href="@{/}"><button class="btn btn-lg editButt">Back to Homepage</button></a>
+        </div>
 
+    </div>
 <div th:replace="/fragments/styling :: body-links"></div>
 </body>
 </html>

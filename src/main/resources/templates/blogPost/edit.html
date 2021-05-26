@@ -5,6 +5,7 @@
     <title>Edit Blog Post</title>
 </head>
 <body>
+<div class="bg">
     <div th:replace="/fragments/navbar :: navbar"></div>
     <div class="container">
         <div class="header">
@@ -24,7 +25,7 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" th:field="*{blogEntry}"></textarea>
             </div>
 
-            <button class="btn btn-primary">Submit Your Post</button>
+            <button class="btn submitNew">Submit Your Post</button>
         </form>
     </div>
 
@@ -47,7 +48,7 @@
 
 <!--    </div>-->
 
-
+</div>
     <div th:replace="/fragments/styling :: body-links"></div>
 </body>
 </html>
